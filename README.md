@@ -1,8 +1,9 @@
-# smart-scheduler
+# smart-Scheduler
 
 ## Objective:
 
 ### In this final activity, you will design and implement a simplified version of a Smart Scheduler that automates exam scheduling using CRUD (Create, Read, Update, Delete) operations.
+
 
 ## Instructions:
 
@@ -17,6 +18,7 @@
 ### ➢ Edit an exam entry
 ### ➢ Delete an exam entry
 
+
 ### 2. Sample Requirements
 
 ### Your program should:
@@ -25,6 +27,7 @@
 ### ✓ Include a simple text-based menu for user interaction.
 ### ✓ Allow repeated operations until the user exits.
 
+
 ## You can:
 
-### Enhance your schedulerto automatically avoid overlapping  exams based on date and time.
+### Enhance your scheduler to automatically avoid overlapping  exams based on date and time.
