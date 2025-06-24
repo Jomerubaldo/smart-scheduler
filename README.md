@@ -1,4 +1,4 @@
-# smart-Scheduler
+# Smart-Scheduler
 
 ## Objective:
 
@@ -7,7 +7,7 @@
 
 ## Instructions:
 
-### 1. Project Setup
+## 1. Project Setup
 
 ### ✓ Create a new folder named `smart scheduler` on your computer.
 ### ✓ Inside, create a Python script file named `scheduler.py`.
@@ -19,9 +19,9 @@
 ### ➢ Delete an exam entry
 
 
-### 2. Sample Requirements
+## 2. Sample Requirements
 
-### Your program should:
+## Your program should:
 
 ### ✓ Store exam name, date, time, and assigned room.
 ### ✓ Include a simple text-based menu for user interaction.
