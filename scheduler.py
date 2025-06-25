@@ -67,7 +67,7 @@ while True:
 
             print("Exam Edit Successfully")
 
-            # Show updated list
+            # Show Updated List
             print("\nUpdated Exam Schedule")
             for exam in examSchedule:
                 print("Name:", exam["name"])
