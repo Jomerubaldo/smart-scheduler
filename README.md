@@ -29,5 +29,4 @@
 
 
 ## You can:
-
 ### Enhance your scheduler to automatically avoid overlapping  exams based on date and time.

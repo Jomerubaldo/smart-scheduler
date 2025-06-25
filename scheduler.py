@@ -11,7 +11,7 @@ while True:
     choice = input("Enter Your Choice: ")
 
     if choice == "1":
-        # ADD NEW EXAM
+        # 1. ADD NEW EXAM
         name = input("Enter Name: ")
         date = input("Enter Date: ")
         time = input("Enter Time: ")
@@ -29,7 +29,7 @@ while True:
         print("Exam Add Successfully")
 
     elif choice == "2":
-        # VIEW ALL EXAMS
+        # 2. VIEW ALL EXAMS
         print("\nAll Exams:")
         if not examSchedule:
             print("No exams found.")
@@ -41,7 +41,7 @@ while True:
                 print("Room:", exam["room"])
 
     elif choice == "3":
-        # EDIT EXAM
+        # 3. EDIT EXAM
         print("\nEdit Exam:")
         if not examSchedule:
             print("No exams to edit.")
@@ -76,7 +76,7 @@ while True:
                 print("Room:", exam["room"])
 
     elif choice == "4":
-        # DELETE EXAM
+        # 4. DELETE EXAM
         print("\nDelete Exam:")
         if not examSchedule:
             print("No exams to delete.")
@@ -88,14 +88,10 @@ while True:
             examSchedule.pop(delete)
 
             print("Exam Deleted Successfully")
-
+        # 5. Exit The Program
     elif choice == "5":
         print("Exiting Smart Scheduler. Goodbye!")
         break
 
     else:
-        print("Invalid choice. Please enter 1-5.")
-
-# NEED TO DO IS EXPLAIN STEP BY STEP HOW PROCESS IS THIS THEN ITS DONE
-# GREAT JOB MYSELF YOU DID IT!
-# NOW YOU  CAN STUDY WEB DEV USING JAVASCRIPT
+        print("Invalid Choice. Please Enter 1-5.")
