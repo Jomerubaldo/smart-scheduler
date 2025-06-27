@@ -1,6 +1,7 @@
-examSchedule = [] #EMPTY LIST.   #THINKING PROPER VARIABLE NAME FOR EMPTY LIST
+examSchedule = []
 
-#USER TEXT INTERFACE
+# USER TEXT INTERFACE
+## USING THIS USER CAN CHOICE WHAT NUMBER THEY WANT TO SPECIFIC FUNCTION
 def userInterface():
     print("\nSmart Scheduler")
     print("1. Add New Exam")
@@ -9,6 +10,9 @@ def userInterface():
     print("4. Delete Exam")
     print("5. Exit")
     
+# USING THIS CONDITIONAL STATEMENT IF USER PRESS ANY NUMBER HAVE FUNCTION. THEN USER GOTO THE SPECIFIC FUNCTION
+## I CREATE 1 - 5 FUNCTIONS THEN EVERY EACH OF THEM HAVE EQUIVALENT FUNCTION
+### THEN IF USER PRESS NONE OF THE OPTIONS THEN ELSE CONDITION SHOW UP FOR INVALID USER CHOICE
 def choiceFunction(choice, examSchedule):
     if choice == 1:
         addFunction(examSchedule)
@@ -23,7 +27,9 @@ def choiceFunction(choice, examSchedule):
     else:
         print("Invalid Choice. Please Enter 1-5.")
 
-        #1. ADD NEW EXAM
+# 1. ADD NEW EXAM
+## FOR THIS FUNCTION GET USER ADD INFORMATION THEN STORE IT INTO EXAMVALUE DICTIONARIE THEN STORE IT INTO LIST USING APPEND FUCNTION
+### THEN AFTER THAT IF COMPLETELY DONE THE PRINT FUNCTION SHOW UP EXAM ADD SUCCESSFULLY
 def addFunction(examSchedule):
     name = input("Enter Name: ")
     date = input("Enter Date: ")
@@ -36,36 +42,41 @@ def addFunction(examSchedule):
         "time": time,
         "room": room,
     }
-
+        
     examSchedule.append(examValue)
     print("Exam Added Successfully")
     
-    #2. VIEW ALL EXAMS
+#2. VIEW ALL EXAMS
+## THIS FUNCTION SHOW ALL VALUES INSIDE OF IT THEN I USED CONDITIONAL STATEMENT FOR THE CHECKING IF THE EXAM IS EMPTY THE PRINT FUNCTION SHOW UP NO EXAM FOUND
+### ELSE IF HAVE VALUE INSIDE IT CODE RUN THEN FOOR LOOP IS WORKING CHECK THE ALL VALUE INSIDE OF IT THEN SHOW IT ALL
 def viewFunction(examSchedule):
     print("\nAll Exams:")
     if not examSchedule:
-        print("No exams found.")
+        print("No Exams Found.")
     else:
-        for exam in examSchedule:
-            print("Name:", exam["name"])
-            print("Date:", exam["date"])
-            print("Time:", exam["time"])
-            print("Room:", exam["room"])
+        for examValue in examSchedule:
+            print("Name:", examValue["name"])
+            print("Date:", examValue["date"])
+            print("Time:", examValue["time"])
+            print("Room:", examValue["room"])
 
-            #3. EDIT EXAM
+#3. EDIT EXAM
+## THE FUNCTION FOR THIS I USED CONDITIONAL STATEMENT CHECK IF THE HAVE VALUE OR NOTHING IF EMPTY THE PRINT FUNCTION SHOW UP LIKE NO EXAMS TO EDIT
+### THEN IF HAVE VALUE ELSE FUNCTION WORKING INSIDE THEM I USED FOR LOOP FOR CHECK ALL INDEX AND VALUES INSIDE OF THEM
+#### AFTER THE USER PICK WHAT INDEX VALUE ITS STORE INTO EXAMVALUE DICTIONARIES THEN STORE IN INTO LIST IN EXAMSHEDULE
 def editFunction(examSchedule):
     print("\nEdit Exam:")
     if not examSchedule:
-        print("No exams to edit.")
+        print("No Exams To Edit.")
     else:
-        for index, exam in enumerate(examSchedule):
-            print(f"{index}. {exam['name']} {exam['date']} {exam['time']} {exam['room']}")
+        for index, examValue in enumerate(examSchedule):
+            print(f"{index}. {examValue['name']} {examValue['date']} {examValue['time']} {examValue['room']}")
 
-        edit = int(input("Enter number you want to edit: "))
-        name = input("Enter new Name: ")
-        date = input("Enter new Date: ")
-        time = input("Enter new Time: ")
-        room = input("Enter new Room: ")
+        edit = int(input("Enter Index Number You Want To Edit: "))
+        name = input("Enter New Name: ")
+        date = input("Enter New Date: ")
+        time = input("Enter New Time: ")
+        room = input("Enter New Room: ")
 
         examValue = {
             "name": name,
@@ -77,37 +88,31 @@ def editFunction(examSchedule):
         examSchedule[edit] = examValue
         print("Exam Edited Successfully")
 
-        #4. DELETE EXAM
+#4. DELETE EXAM
+## SAME AS PREVIOUS I USED CONDITIONAL STATEMENT FOR CHECKING IF THE VALUE IS EMPTY OR NOT
+### THEN IF HAVE VALUE I USED FORLOOP CHECK THE INDEX AND VALUE THEN WHAT USER WANT TO DELETE
+#### I USED POP() FUNCTION TO DELETE THE VALUE
 def deleteFunction(examSchedule):
     print("\nDelete Exam:")
     if not examSchedule:
-        print("No exams to delete.")
+        print("No Exams To Delete.")
     else:
-        for index, exam in enumerate(examSchedule):
-            print(f"{index}. {exam['name']} {exam['date']} {exam['time']} {exam['room']}")
+        for index, examValue in enumerate(examSchedule):
+            print(f"{index}. {examValue['name']} {examValue['date']} {examValue['time']} {examValue['room']}")
 
-        delete = int(input("Enter number you want to delete: "))
+        delete = int(input("Enter Index Number You Want To Delete: "))
         examSchedule.pop(delete)
         print("Exam Deleted Successfully")
 
-        #5. EXIT
+#5. EXIT PROGRAM
+## IF USER PRES NUMBER 5 AUTOMATICALLY EXIT THE PROGRAM THEN PRINT FUNCTION SHOW UP EXIT SUCCESSFULLY, THANK YOU!
 def exitFunction():
     print("Exit Successfully, Thank You!")
     exit()
 
-#Main Program Loop
+ # WHILE TRUE FUNCTION FOR THE REPEATEDLY  SHOW  USER INTERFACE MENU
+ ## EVERY USER DONE FOR EACH FUNCTION THE WHILE TRUE FUNCTION SHOW UP THEN USER CAN DECIDE WHAT NEXT TO DO
 while True:
     userInterface()
     inputNumber = int(input("Enter Your Choice: "))
     choiceFunction(inputNumber, examSchedule)
-
-
- ##REFLECTION WHILE DOING THIS CRUD
-
-## 1 My reflection while doing this code is when im creating it im struggling to how the store the data input user then show up them when they need to view it then edit.
-## 2 Second i ecounter for input user when i input 2 they show the option but not efficient like i click 2 yes its 2 but in the data its as string not a integer so that time i want to solve the problem.
-## 3 Maybe for the function cause each of them i need to create for the specific fucntion if user click 1 then show what 1 function it is.
-## 4 I dont know if its okay to use twice dictionaries in different function like for edit and add.
-
-
-#Optional: i want add function trim() if user accidentally click small latter its automatically capitalize first letter for better result.
