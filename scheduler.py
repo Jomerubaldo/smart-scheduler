@@ -31,20 +31,20 @@ def choiceFunction(choice, examSchedule):
 ## FOR THIS FUNCTION GET USER ADD INFORMATION THEN STORE IT INTO EXAMVALUE DICTIONARIE THEN STORE IT INTO LIST USING APPEND FUCNTION
 ### THEN AFTER THAT IF COMPLETELY DONE THE PRINT FUNCTION SHOW UP EXAM ADD SUCCESSFULLY
 def addFunction(examSchedule):
-    name = input("Enter Name: ")
-    date = input("Enter Date: ")
-    time = input("Enter Time: ")
-    room = input("Enter Room: ")
+    examName = input("Enter Name: ")
+    examDate = input("Enter Date: ")
+    examTime = input("Enter Time: ")
+    examRoom = input("Enter Room: ")
 
     examValue = {
-        "name": name,
-        "date": date,
-        "time": time,
-        "room": room,
+        "name": examName,
+        "date": examDate,
+        "time": examTime,
+        "room": examRoom,
     }
         
     examSchedule.append(examValue)
-    print("Exam Added Successfully")
+    print("\nExam Added Successfully")
     
 # 2. VIEW ALL EXAMS
 ## THIS FUNCTION SHOW ALL VALUES INSIDE OF IT THEN I USED CONDITIONAL STATEMENT FOR THE CHECKING IF THE EXAM IS EMPTY THE PRINT FUNCTION SHOW UP NO EXAM FOUND
@@ -72,21 +72,21 @@ def editFunction(examSchedule):
         for index, examValue in enumerate(examSchedule):
             print(f"{index}. {examValue['name']} {examValue['date']} {examValue['time']} {examValue['room']}")
 
-        edit = int(input("Enter Index Number You Want To Edit: "))
-        name = input("Enter New Name: ")
-        date = input("Enter New Date: ")
-        time = input("Enter New Time: ")
-        room = input("Enter New Room: ")
+        examEdit = int(input("Enter Index Number You Want To Edit: "))
+        examName = input("Enter New Name: ")
+        examDate = input("Enter New Date: ")
+        examTime = input("Enter New Time: ")
+        examRoom = input("Enter New Room: ")
 
         examValue = {
-            "name": name,
-            "date": date,
-            "time": time,
-            "room": room,
+            "name": examName,
+            "date": examDate,
+            "time": examTime,
+            "room": examRoom,
         }
 
-        examSchedule[edit] = examValue
-        print("Exam Edited Successfully")
+        examSchedule[examEdit] = examValue
+        print("\nExam Edited Successfully")
 
 # 4. DELETE EXAM
 ## SAME AS PREVIOUS I USED CONDITIONAL STATEMENT FOR CHECKING IF THE VALUE IS EMPTY OR NOT
@@ -100,19 +100,19 @@ def deleteFunction(examSchedule):
         for index, examValue in enumerate(examSchedule):
             print(f"{index}. {examValue['name']} {examValue['date']} {examValue['time']} {examValue['room']}")
 
-        delete = int(input("Enter Index Number You Want To Delete: "))
-        examSchedule.pop(delete)
-        print("Exam Deleted Successfully")
+        examDelete = int(input("Enter Index Number You Want To Delete: "))
+        examSchedule.pop(examDelete)
+        print("\nExam Deleted Successfully")
 
 # 5. EXIT PROGRAM
 ## IF USER PRES NUMBER 5 AUTOMATICALLY EXIT THE PROGRAM THEN PRINT FUNCTION SHOW UP EXIT SUCCESSFULLY, THANK YOU!
 def exitFunction():
-    print("Exit Successfully, Thank You!")
+    print("\nExit Successfully, Thank You!")
     exit()
 
  # WHILE TRUE FUNCTION FOR THE REPEATEDLY  SHOW  USER INTERFACE MENU
  ## EVERY USER DONE FOR EACH FUNCTION THE WHILE TRUE FUNCTION SHOW UP THEN USER CAN DECIDE WHAT NEXT TO DO
 while True:
     userInterface()
-    inputNumber = int(input("Enter Your Choice: "))
+    inputNumber = int(input("\nEnter Your Choice: "))
     choiceFunction(inputNumber, examSchedule)
