@@ -26,7 +26,3 @@
 ### ✓ Store exam name, date, time, and assigned room.
 ### ✓ Include a simple text-based menu for user interaction.
 ### ✓ Allow repeated operations until the user exits.
-
-
-## You can:
-### Enhance your scheduler to automatically avoid overlapping  exams based on date and time.
